@@ -3,21 +3,22 @@ package org.example;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import org.modelo.basico.Usuario;
 
-public class RemoverUsuario {
+public class NovoUsuario {
 
     public static void main(String[] args) {
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Exercicios-jpa");
         EntityManager em = emf.createEntityManager();
 
-        Usuario usuario = em.find(Usuario.class, 8L);
+        Usuario novoUsuario1 = new Usuario("Marcelo", "marcelo@lanche.com.br");
 
-        if(usuario != null) {
-            em.getTransaction().begin();
-            em.remove(usuario);
-            em.getTransaction().commit();
-        }
+        em.getTransaction().begin();
+        em.persist(novoUsuario1);
+        em.getTransaction().commit();
+
+        System.out.println("Id do novo usuário: " + novoUsuario1.getId());
 
         em.close();
         emf.close();

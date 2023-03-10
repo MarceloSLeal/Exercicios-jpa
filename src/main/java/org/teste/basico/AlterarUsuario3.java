@@ -3,8 +3,9 @@ package org.example;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import org.modelo.basico.Usuario;
 
-public class AlterarUsuario1 {
+public class AlterarUsuario3 {
 
     public static void main(String[] args) {
 
@@ -14,15 +15,15 @@ public class AlterarUsuario1 {
         em.getTransaction().begin();
 
         Usuario usuario = em.find(Usuario.class, 7L);
-        usuario.setNome("MarceloLeal");
-        usuario.setEmail("marceloleal@email.com");
+        em.detach(usuario);
 
+        usuario.setNome("MarceloLealIdiota");
         em.merge(usuario);
 
         em.getTransaction().commit();
 
         em.close();
         emf.close();
-    }
 
+    }
 }
