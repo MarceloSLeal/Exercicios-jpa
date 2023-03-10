@@ -1,4 +1,4 @@
-package org.example;
+package org.teste.basico;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
