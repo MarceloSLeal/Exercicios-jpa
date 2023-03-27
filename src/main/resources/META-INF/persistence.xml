@@ -6,6 +6,8 @@
 
 <!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
 
+        <mapping-file>META-INF/consultas.xml</mapping-file>
+
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/curso_java"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
