@@ -4,7 +4,6 @@ import org.infra.DAO;
 import org.modelo.muitospramuitos.Ator;
 import org.modelo.muitospramuitos.Filme;
 
-import java.io.File;
 import java.util.List;
 
 public class ObterFilmes {
